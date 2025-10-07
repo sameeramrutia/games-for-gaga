@@ -1,0 +1,41 @@
+# -------------------------------------------------------------------
+# 1. ROOT LEVEL ARTIFACTS (If any build/deps are here)
+# -------------------------------------------------------------------
+
+# Root dependencies (if you install node_modules at the root)
+/node_modules
+
+# -------------------------------------------------------------------
+# 2. SUB-APP ARTIFACTS
+# -------------------------------------------------------------------
+
+# Ignore node_modules directory within any sub-folder
+# **This is the critical line for a monorepo.**
+**/node_modules
+
+# Ignore Vite build output directory within any sub-folder (default is 'dist')
+# This catches /game-name/dist
+**/dist
+**/build
+
+# -------------------------------------------------------------------
+# 3. ENVIRONMENT AND CONFIGURATION
+# -------------------------------------------------------------------
+
+# Environment Variables (Secrets)
+# Catch .env files in the root and all sub-folders
+.env
+.env.*
+!*.env.example # Keep example files for reference
+
+# -------------------------------------------------------------------
+# 4. OS and IDE Files
+# -------------------------------------------------------------------
+
+# macOS
+.DS_Store
+
+# Logs, npm cache, debug logs
+npm-debug.log*
+yarn-error.log
+.npm
